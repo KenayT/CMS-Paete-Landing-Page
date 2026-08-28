@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "icon": "assets/security icon.png",
+    "heading": "Security & Trust",
+    "intro": "We follow strict compliance with:",
+    "items": ["BSP Regulations", "AMLA & KYC Guidelines", "Data Privacy Act of 2012"],
+    "cta": { "text": "Learn more...", "url": "#" },
+    "image": "assets/security vector.png"
+  }
+]

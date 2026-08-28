@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "bgImage": "assets/news bg.png",
+    "badgeText": "News & Updates",
+    "viewAllUrl": "#",
+    "items": [
+      { "date": "August 5, 2025", "image": "assets/logo.png", "title": "New Mobile Banking<br />App Launched!", "url": "#" },
+      { "date": "July 20, 2025", "image": "assets/news2.png", "title": "Higher Interest Rates<br />on Time Deposits", "url": "#" },
+      { "date": "July 1, 2025", "image": "assets/news3.png", "title": "Branch Renovation<br />Completed", "url": "#" }
+    ]
+  }
+]

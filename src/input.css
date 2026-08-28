@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* THIS is the crucial line to make the manual dark mode button work */
+@variant dark (&:is(.dark *));

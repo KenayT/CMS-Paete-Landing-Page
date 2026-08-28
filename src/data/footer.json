@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "logoSrc": "assets/logo.png",
+    "bankName": "Rural Bank of Paete, Inc.",
+    "navLinks": [
+      { "name": "Home", "url": "index.html" },
+      { "name": "About Us", "url": "about.html" },
+      { "name": "Privacy Policy", "url": "#" },
+      { "name": "Terms of Service", "url": "#" }
+    ],
+    "copyrightText": "&copy; 2026 Rural Bank of Paete, Inc. All rights reserved."
+  }
+]

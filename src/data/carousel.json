@@ -1,0 +1,6 @@
+[
+  { "id": 1, "icon": "assets/icon1.png", "title": "Regular Savings", "description": "A deposit account that earns interest and allows you to...", "linkText": "Learn more...", "url": "#" },
+  { "id": 2, "icon": "assets/icon2.png", "title": "Basic Deposit Account", "description": "A simplified savings account designed for the unbanked...", "linkText": "Learn more...", "url": "#" },
+  { "id": 3, "icon": "assets/icon3.png", "title": "Time Deposit Account", "description": "A deposit account where funds are locked in for...", "linkText": "Learn more...", "url": "#" },
+  { "id": 4, "icon": "assets/icon4.png", "title": "Checking Account", "description": "A deposit account that allows the account holder to issue...", "linkText": "Learn more...", "url": "#" }
+]

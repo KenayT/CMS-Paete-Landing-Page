@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "bgImage": "assets/mbanking bg.jpg",
+    "badgeText": "Mobile Banking",
+    "image": "assets/mobile.png",
+    "heading": "Your bank in <br class=\"hidden lg:block\" /> your hands.",
+    "description": "Manage your savings, transfer funds, and apply for loans, anytime, anywhere.",
+    "cta": { "text": "Coming Soon!", "url": "#" }
+  }
+]

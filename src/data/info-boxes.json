@@ -1,0 +1,5 @@
+[
+  { "id": 1, "type": "list", "title": "Members", "items": ["Philippine Deposit Insurance Corporation", "Rural Bankers Association of the Philippines", "Confederation of Southern Tagalog Rural Bank"] },
+  { "id": 2, "type": "list", "title": "Services We Offer", "items": ["Bancnet - POS (Point of Sale)", "Cash Out"] },
+  { "id": 3, "type": "cta", "title": "Let us know what you want...", "url": "#" }
+]
