@@ -1,4 +1,4 @@
-const DATA_HEADER = "./src/data/header.json";
+const DATA_HEADER = "./api/public/get-section.php?section=header";
 
 const getCurrentPage = () => {
   const path = window.location.pathname.split("/").pop();
@@ -124,7 +124,7 @@ export const loadHeaderSection = async () => {
     const response = await fetch(DATA_HEADER);
     if (!response.ok) throw new Error("Could not find the header data file.");
     const rawData = await response.json();
-    renderHeader(rawData[0]);
+    renderHeader(Array.isArray(rawData) ? rawData[0] : rawData);
   } catch (err) {
     console.error("Oops:", err);
   }
