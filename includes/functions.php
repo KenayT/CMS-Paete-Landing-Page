@@ -37,6 +37,22 @@ function getRequestBody(): array
     return $data;
 }
 
+/**
+ * Like sanitize(), but walks into arrays/objects so nested values
+ * (e.g. a "cta": {text,url} object, or an array of {title,text} items)
+ * get every string leaf cleaned, not just top-level scalars.
+ */
+function sanitizeArray(mixed $value): mixed
+{
+    if (is_string($value)) {
+        return sanitize($value);
+    }
+    if (is_array($value)) {
+        return array_map('sanitizeArray', $value);
+    }
+    return $value; // numbers, bools, null pass through unchanged
+}
+
 function getSectionContent(PDO $pdo, string $section): array
 {
     $stmt = $pdo->prepare("SELECT content FROM page_sections WHERE section = ?");
