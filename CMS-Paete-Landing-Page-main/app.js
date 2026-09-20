@@ -1,0 +1,34 @@
+import { loadHeaderSection } from "./src/js/sections/header.js";
+import { loadFooterSection } from "./src/js/sections/footer.js";
+import { loadHeroSection } from "./src/js/sections/hero.js";
+import { loadCarouselSection } from "./src/js/sections/carousel.js";
+import { loadOfferingsSection } from "./src/js/sections/offerings.js";
+import { loadInfoBoxesSection } from "./src/js/sections/info-boxes.js";
+import { loadAboutIntroSection } from "./src/js/sections/about-intro.js";
+import { loadMissionVisionSection } from "./src/js/sections/mission-vision.js";
+import { loadTeamSection } from "./src/js/sections/team.js";
+import { loadLoanServicesSection } from "./src/js/sections/loan-services.js";
+import { loadNewsCardsSection } from "./src/js/sections/news-cards.js";
+import { loadMobileBankingSection } from "./src/js/sections/mobile-banking.js";
+import { loadSecuritySection } from "./src/js/sections/security.js";
+import { loadWhyChooseSection } from "./src/js/sections/why-choose.js";
+import { loadTestimonialsSection } from "./src/js/sections/testimonials.js";
+import { loadContactInfoSection } from "./src/js/sections/contact-info.js";
+
+// render current page.
+loadHeaderSection();
+loadFooterSection();
+loadHeroSection();
+loadCarouselSection();
+loadOfferingsSection();
+loadInfoBoxesSection();
+loadAboutIntroSection();
+loadMissionVisionSection();
+loadTeamSection();
+loadLoanServicesSection();
+loadNewsCardsSection();
+loadMobileBankingSection();
+loadSecuritySection();
+loadWhyChooseSection();
+loadTestimonialsSection();
+loadContactInfoSection();

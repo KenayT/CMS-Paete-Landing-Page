@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "bgImage": "assets/about us bg.jpg",
+    "heading": "About Us",
+    "image": "assets/about us vector.png",
+    "imageAlt": "Rural Bank of Paete team illustration",
+    "cards": [
+      { "title": "Who we are?", "text": "Rural Bank of Paete Inc. is a proud community-based bank committed to delivering reliable, affordable, and inclusive financial services to individuals, farmers, fisherfolk, and micro-entrepreneurs in Laguna and neighboring areas." },
+      { "title": "Our Story", "text": "Founded in 1966, our bank has been a pillar of strength for the local economy. We are passionate about empowering our clients, whether it's helping you start your savings journey or funding your farm or small business." }
+    ]
+  }
+]

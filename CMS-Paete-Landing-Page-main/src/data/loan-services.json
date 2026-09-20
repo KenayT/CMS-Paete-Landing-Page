@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "bgImage": "assets/loan bg.jpg",
+    "badgeText": "Loan Services",
+    "image": "assets/loan.png",
+    "imageAlt": "Loan application illustration",
+    "description": "Whether you're growing your farm, starting a business, or facing an emergency, we have a loan for you.",
+    "features": [
+      "Competitive interest rates",
+      "Fast approval process",
+      "Friendly, local service",
+      "Flexible payment terms"
+    ],
+    "ctaPrimary": { "text": "Check loan requirements", "url": "#" },
+    "ctaSecondary": { "text": "Apply for loan now?", "url": "#" }
+  }
+]

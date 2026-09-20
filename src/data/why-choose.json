@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "badgeText": "Why Choose Us?",
+    "items": [
+      { "icon": "assets/local.png", "text": "Local bank with a heart" },
+      { "icon": "assets/fast.png", "text": "Fast and friendly service" },
+      { "icon": "assets/finance.png", "text": "Financial partner for every stage of life" },
+      { "icon": "assets/empower.png", "text": "Empowering our community for generations" }
+    ]
+  }
+]

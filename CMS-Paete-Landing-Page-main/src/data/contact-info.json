@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "heading": "Get In Touch",
+    "description": "Have questions or need assistance? Our friendly team is ready to help, reach out to us today!",
+    "items": [
+      { "icon": "phone", "title": "Call Us", "detail": "(049) 557 0006" },
+      { "icon": "mail", "title": "Email Us", "detail": "rbpaete1967@gmail.com" },
+      { "icon": "globe", "title": "Website", "detail": "www.paetebank.ph" },
+      { "icon": "pin", "title": "Address", "detail": "J. Rizal corner J.V. Quesada<br>Streets, Brgy. Ilaya del Sur,<br>Paete, Laguna, 4016" }
+    ]
+  }
+]

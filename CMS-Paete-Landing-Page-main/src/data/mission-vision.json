@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "heading": "Our Mission and Vision Statement",
+    "description": "Our mission and vision guide our purpose and direction, ensuring every service we provide stays true to our values and long-term goals for the community.",
+    "items": [
+      { "icon": "assets/mission.png", "label": "MISSION", "text": "To promote financial inclusion and growth in rural communities by providing safe, simple, and sustainable banking solutions." },
+      { "icon": "assets/vision.png", "label": "VISION", "text": "To be the most trusted and accessible rural bank in Laguna and Southern Luzon, driven by integrity, innovation, and community care." }
+    ]
+  }
+]

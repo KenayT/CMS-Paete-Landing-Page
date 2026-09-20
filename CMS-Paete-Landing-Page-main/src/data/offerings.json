@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "heading": "What We Offer?",
+    "description": "Discover our range of financial services designed to help you save, grow, and manage your money with trust and convenience.",
+    "badgeText": "Products we offer:",
+    "image": "assets/vector art 2 section 2.png",
+    "loans": [
+      "Agricultural Loan",
+      "Industrial Loan",
+      "Commercial Loan",
+      "Medical Loan",
+      "Housing Loan",
+      "Salary Loan",
+      "O.F.W. Loan",
+      "Pension Loan / SSS / GSIS",
+      "Other Government Supervised Loan"
+    ],
+    "deposits": [
+      "Savings Account Deposit",
+      "Time Deposit"
+    ]
+  }
+]

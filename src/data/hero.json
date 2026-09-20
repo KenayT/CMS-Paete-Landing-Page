@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "bgImage": "assets/landing page bg section 1.jpg",
+    "vectorImage": "assets/vector art section 1.png",
+    "headline": "Welcome to",
+    "headlineHighlight": "Rural Bank of Paete Inc.",
+    "description": "Serving our community with trust, care, and financial empowerment since 1966. We offer secure and accessible banking services tailored to the needs of individuals, families, farmers, and small businesses in Paete and beyond.",
+    "badgeText": "NOW, SAVE, GROW WITH US!",
+    "ctaPrimary": { "text": "Open an Account Now!", "url": "#" },
+    "ctaSecondary": { "text": "Learn More", "url": "#" }
+  }
+]
