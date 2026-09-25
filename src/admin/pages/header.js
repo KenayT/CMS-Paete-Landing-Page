@@ -23,7 +23,7 @@ ArrayEditor.mount({
   label: "Navigation Links",
   items: data.navLinks || [],
   fields: [
-    { key: "name", label: "Link Text", placeholder: "e.g. About Us" },
+    { key: "label", label: "Link Text", placeholder: "e.g. About Us" },
     { key: "url", label: "URL", placeholder: "about.html" },
   ],
   onSave: (val, index) => apiPatch(API, "navLinks", val, index),

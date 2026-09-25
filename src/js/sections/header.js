@@ -12,21 +12,22 @@ const renderHeader = (headerData) => {
   const { logoSrc, logoAlt, bankName, navLinks } = headerData;
   const currentPage = getCurrentPage();
 
-  const navLinksHtml = navLinks
+  const navLinksHtml = (navLinks || [])
     .map((link) => {
       const isActive = link.url === currentPage;
+      const text = link.label || link.name || "";
       const activeClasses = isActive
         ? "text-blue-600 dark:text-yellow-400 border-b-2 border-blue-600 dark:border-yellow-400 pb-1"
         : "hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300";
-      return `<a href="${link.url}" class="${activeClasses}">${link.name}</a>`;
+      return `<a href="${link.url}" class="${activeClasses}">${text}</a>`;
     })
     .join("");
 
-  const mobileNavLinksHtml = navLinks
-    .map(
-      (link) =>
-        `<a href="${link.url}" class="block w-full bg-gray-50 dark:bg-gray-800 hover:bg-blue-600 hover:text-white dark:hover:bg-yellow-400 dark:hover:text-blue-900 py-3 px-4 rounded-lg transition-colors">${link.name}</a>`
-    )
+  const mobileNavLinksHtml = (navLinks || [])
+    .map((link) => {
+      const text = link.label || link.name || "";
+      return `<a href="${link.url}" class="block w-full bg-gray-50 dark:bg-gray-800 hover:bg-blue-600 hover:text-white dark:hover:bg-yellow-400 dark:hover:text-blue-900 py-3 px-4 rounded-lg transition-colors">${text}</a>`;
+    })
     .join("");
 
   headerContainer.innerHTML = `
