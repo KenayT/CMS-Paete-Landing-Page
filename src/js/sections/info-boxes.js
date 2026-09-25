@@ -1,4 +1,4 @@
-const DATA_INFO_BOXES = "./src/data/info-boxes.json";
+const DATA_INFO_BOXES = "/CMS-Paete-Landing-Page/api/public/get-section.php?section=info-boxes";
 
 const boxHtml = (box) => {
   const { type, title, items, url } = box;

@@ -1,4 +1,5 @@
-const DATA_HERO = "./src/data/hero.json";
+// Point to the CMS API endpoint instead of the static JSON file
+const API_HERO = "./api/public/get-section.php?section=hero";
 
 const renderHero = (heroData) => {
   const heroContainer = document.querySelector("#hero-section");
@@ -55,11 +56,11 @@ const renderHero = (heroData) => {
 
 export const loadHeroSection = async () => {
   try {
-    const response = await fetch(DATA_HERO);
-    if (!response.ok) throw new Error("Could not find the hero data file.");
-    const rawData = await response.json();
-    renderHero(rawData[0]);
+    const response = await fetch(API_HERO);
+    if (!response.ok) throw new Error("Could not fetch hero data from API.");
+    const data = await response.json();
+    renderHero(data);
   } catch (err) {
-    console.error("Oops:", err);
+    console.error("Hero hydration error:", err);
   }
 };

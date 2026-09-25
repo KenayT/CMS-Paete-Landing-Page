@@ -31,8 +31,10 @@ export async function apiPost(API, field, item) {
 }
 
 export async function apiDelete(API, field, index) {
-  const res = await fetch(`${API}?field=${field}&index=${index}`, {
+  const res = await fetch(API, {
     method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ field, index }),
   });
   const json = await res.json();
   if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);

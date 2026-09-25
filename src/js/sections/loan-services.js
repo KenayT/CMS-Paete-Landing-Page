@@ -1,4 +1,4 @@
-const DATA_LOAN_SERVICES = "./src/data/loan-services.json";
+const DATA_LOAN_SERVICES = "/CMS-Paete-Landing-Page/api/public/get-section.php?section=loan-services";
 
 const renderLoanServices = (data) => {
   const container = document.querySelector("#loan-services-section");

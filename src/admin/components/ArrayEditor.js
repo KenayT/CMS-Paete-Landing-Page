@@ -5,13 +5,14 @@ export const ArrayEditor = {
     this.el = document.querySelector(config.container);
     if (!this.el) return;
     this.config = config;
-    this.render(config.items);
+    this.render(config.items || []);
   },
 
   render(items) {
-    const { label, fields } = this.config;
+    const title = this.config.title || this.config.label || "Items";
+    const { fields } = this.config;
 
-    const rowsHtml = items
+    const rowsHtml = (items || [])
       .map(
         (item, i) => `
       <div class="link-item" data-index="${i}">
@@ -43,7 +44,7 @@ export const ArrayEditor = {
 
     this.el.innerHTML = `
       <div class="card-header">
-        <h2>${escHtml(label)}</h2>
+        <h2>${escHtml(title)}</h2>
         <span class="badge badge-crud">Full CRUD</span>
       </div>
       <div class="links-list">${rowsHtml || "<p class='empty'>No items yet.</p>"}</div>
@@ -89,7 +90,11 @@ export const ArrayEditor = {
         try {
           const res = await this.config.onDelete(index);
           showToast("Deleted!");
-          this.render(res.items);
+          if (res && res.items) {
+            this.render(res.items);
+          } else {
+            row.remove();
+          }
         } catch (err) {
           showToast(err.message, "error");
           btn.disabled = false;
@@ -97,33 +102,43 @@ export const ArrayEditor = {
       });
     });
 
-    this.el.querySelector(".btn-add").addEventListener("click", async (e) => {
-      const btn = e.currentTarget;
-      const addRow = this.el.querySelector(".add-row");
-      const item = {};
-      let empty = false;
+    const addBtn = this.el.querySelector(".btn-add");
+    if (addBtn) {
+      addBtn.addEventListener("click", async (e) => {
+        const btn = e.currentTarget;
+        const addRow = this.el.querySelector(".add-row");
+        const inputs = Array.from(addRow.querySelectorAll(".add-input"));
+        const item = {};
+        let hasEmpty = false;
 
-      addRow.querySelectorAll(".add-input").forEach((input) => {
-        const val = input.value.trim();
-        if (!val) empty = true;
-        item[input.dataset.key] = val;
+        inputs.forEach((input) => {
+          const val = input.value.trim();
+          if (!val) hasEmpty = true;
+          item[input.dataset.key] = val;
+        });
+
+        if (hasEmpty) {
+          showToast("All fields are required.", "error");
+          return;
+        }
+
+        btn.disabled = true;
+        try {
+          const res = await this.config.onAdd(item);
+          showToast("Added!");
+          
+          if (res && res.items) {
+            this.render(res.items);
+          } else {
+            inputs.forEach(i => i.value = "");
+            setTimeout(() => window.location.reload(), 300);
+          }
+        } catch (err) {
+          showToast(err.message, "error");
+        } finally {
+          btn.disabled = false;
+        }
       });
-
-      if (empty) {
-        showToast("All fields are required.", "error");
-        return;
-      }
-
-      btn.disabled = true;
-      try {
-        const res = await this.config.onAdd(item);
-        showToast("Added!");
-        this.render(res.items);
-      } catch (err) {
-        showToast(err.message, "error");
-      } finally {
-        btn.disabled = false;
-      }
-    });
+    }
   },
 };

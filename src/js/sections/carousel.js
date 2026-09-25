@@ -1,4 +1,4 @@
-const DATA_CAROUSEL = "./src/data/carousel.json";
+const DATA_CAROUSEL = "./api/public/get-section.php?section=carousel";
 
 const cardHtml = (card) => {
   const { icon, title, description, linkText, url } = card;

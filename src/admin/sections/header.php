@@ -42,16 +42,98 @@ requireLogin();
         #toast.show { opacity: 1; }
         #toast.success { background: #059669; color: #ecfdf5; }
         #toast.error { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+
+        .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 28px;
+    background: #0b1329;
+    border-bottom: 1px solid #1e293b;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.brand-link:hover {
+    opacity: 0.85;
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: -0.01em;
+}
+
+.badge {
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #334155;
+    text-transform: uppercase;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #f8fafc;
+}
+
+.logout-btn {
+    color: #f87171;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
     </style>
 </head>
 <body>
-    <header>
-        <h1>Paete CMS</h1>
-        <div>
-            <a href="../index.php">&larr; Dashboard</a>
-            <a href="../logout.php">Log out</a>
-        </div>
-    </header>
+    <header class="header">
+    <a href="../index.php" class="brand-link" title="Dashboard">
+        <img src="../../../assets/logo.png" alt="Rural Bank of Paete Logo" class="brand-logo">
+        <span class="brand-title">Rural Bank of Paete, Inc.</span>
+        <span class="badge">CMS</span>
+    </a>
+
+    <div class="user-info">
+        <a href="../index.php" class="nav-link">&larr; Dashboard</a>
+        <a href="../logout.php" class="logout-btn" onclick="return confirm('Are you sure you want to log out?');">Log out</a>
+    </div>
+</header>
 
     <main>
         <h1 class="page-title">Edit: Header</h1>

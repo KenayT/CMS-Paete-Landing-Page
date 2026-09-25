@@ -1,4 +1,4 @@
-const DATA_OFFERINGS = "./src/data/offerings.json";
+const DATA_OFFERINGS = "/CMS-Paete-Landing-Page-main/api/public/get-section.php?section=offerings";
 
 const renderOfferings = (data) => {
   const container = document.querySelector("#offerings-section");
