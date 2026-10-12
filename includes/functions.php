@@ -1,24 +1,44 @@
+
 <?php
+
+// ================= JSON RESPONSE =================
 
 function jsonResponse(mixed $data, int $statusCode = 200): void
 {
     http_response_code($statusCode);
     header('Content-Type: application/json');
+
     echo json_encode($data);
     exit;
 }
 
+
+// ================= INPUT SANITIZATION =================
+
 function sanitize(string $input): string
 {
-    return htmlspecialchars(strip_tags(trim($input)), ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars(
+        strip_tags(trim($input)),
+        ENT_QUOTES,
+        'UTF-8'
+    );
 }
+
+
+// ================= FIELD PREFIX =================
 
 function getFieldPrefix(array $content): array
 {
     return array_keys(
-        array_filter($content, fn($v) => is_array($v) && array_is_list($v))
+        array_filter(
+            $content,
+            fn($v) => is_array($v) && array_is_list($v)
+        )
     );
 }
+
+
+// ================= REQUEST BODY =================
 
 function getRequestBody(): array
 {
@@ -31,11 +51,16 @@ function getRequestBody(): array
     $data = json_decode($raw, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
-        jsonResponse(['error' => 'Invalid JSON: ' . json_last_error_msg()], 400);
+        jsonResponse([
+            'error' => 'Invalid JSON: ' . json_last_error_msg()
+        ], 400);
     }
 
     return $data;
 }
+
+
+// ================= NESTED ARRAY SANITIZATION =================
 
 /**
  * Like sanitize(), but walks into arrays/objects so nested values
@@ -47,24 +72,38 @@ function sanitizeArray(mixed $value): mixed
     if (is_string($value)) {
         return sanitize($value);
     }
+
     if (is_array($value)) {
         return array_map('sanitizeArray', $value);
     }
+
     return $value; // numbers, bools, null pass through unchanged
 }
 
+
+// ================= GET SECTION CONTENT =================
+
 function getSectionContent(PDO $pdo, string $section): array
 {
-    $stmt = $pdo->prepare("SELECT content FROM page_sections WHERE section = ?");
+    $stmt = $pdo->prepare(
+        "SELECT content FROM page_sections WHERE section = ?"
+    );
+
     $stmt->execute([$section]);
+
     $raw = $stmt->fetchColumn();
 
     if ($raw === false) {
-        jsonResponse(['error' => "Section '{$section}' not found."], 404);
+        jsonResponse([
+            'error' => "Section '{$section}' not found."
+        ], 404);
     }
 
     return json_decode($raw, true);
 }
+
+
+// ================= SAVE SECTION CONTENT =================
 
 function saveContent(PDO $pdo, string $section, array $content): void
 {
@@ -73,7 +112,10 @@ function saveContent(PDO $pdo, string $section, array $content): void
     ");
 
     $stmt->execute([
-        json_encode($content, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+        json_encode(
+            $content,
+            JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+        ),
         $section
     ]);
 }
